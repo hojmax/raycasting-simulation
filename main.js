@@ -20,7 +20,9 @@ function setup() {
 
 function draw() {
   background(200)
-  scene.lightSourcePos = createVector(mouseX, mouseY)
-  scene.drawLightSource()
+  if (mouseX >= 0 && mouseX < width && mouseY >= 0 && mouseY < height) {
+    scene.lightSourcePos = createVector(mouseX, mouseY)
+    scene.drawLightSource()
+  }
   scene.drawSegments()
 }
